@@ -1,0 +1,33 @@
+</ul>
+
+<div class="helps">
+    点击<a href="iconfont.tar.gz">iconfont</a>下载 字体文件和DEMO，理论上项目上已经存有只需更新即可。
+</div>
+<div class="helps">
+    第一步：使用font-face声明字体
+            <pre>
+    @font-face {font-family: 'iconfont';
+        src: url('iconfont.eot'); /* IE9*/
+        src: url('iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('iconfont.woff') format('woff'), /* chrome、firefox */
+        url('iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+        url('iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+    }
+    </pre>
+    第二步：定义使用iconfont的样式
+    <pre>
+    .iconfont{font-family:"iconfont";font-size:16px;font-style:normal;}
+    .icon-xxx:after{
+        content:'\e601'
+    }
+</pre>
+    第三步：挑选相应图标并获取字体编码，应用于页面
+<pre>
+&lt;i class="iconfont "&gt;&amp;#x33;&lt;/i&gt;
+&lt;i class="iconfont icon-xxx"&gt;&lt;/i&gt;
+</pre>
+</div>
+
+</div>
+</body>
+</html>

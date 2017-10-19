@@ -1,0 +1,16 @@
+{
+  "name": "@nestsoft/render-iconfont",
+  "version": "0.0.1",
+  "main": "app.js",
+  "author": "Wu Peiyuan",
+  "license": "unlicensed",
+  "scripts": {
+    "build": "node app"
+  },
+  "dependencies": {
+    "font-carrier": "*",
+    "tar": "*",
+    "fstream": "*"
+  },
+  "devDependencies": {}
+}
