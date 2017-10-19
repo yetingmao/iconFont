@@ -1,8 +1,7 @@
 {
-  "name": "@nestsoft/render-iconfont",
+  "name": "iconfont",
   "version": "0.0.1",
   "main": "app.js",
-  "author": "Wu Peiyuan",
   "license": "unlicensed",
   "scripts": {
     "build": "node app"
