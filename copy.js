@@ -1,64 +1,62 @@
-/**
- * Created by wupeiyuan on 2016/1/7.
- */
-var fs = require( 'fs' ),
+
+var fs = require('fs'),
     stat = fs.stat;
 
 /*
- * ¸´ÖÆÄ¿Â¼ÖÐµÄËùÓÐÎÄ¼þ°üÀ¨×ÓÄ¿Â¼
- * @param{ String } ÐèÒª¸´ÖÆµÄÄ¿Â¼
- * @param{ String } ¸´ÖÆµ½Ö¸¶¨µÄÄ¿Â¼
+ * ï¿½ï¿½ï¿½ï¿½Ä¿Â¼ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Â¼
+ * @param{ String } ï¿½ï¿½Òªï¿½ï¿½ï¿½Æµï¿½Ä¿Â¼
+ * @param{ String } ï¿½ï¿½ï¿½Æµï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Ä¿Â¼
  */
-var copy = function( src, dst ){
-    // ¶ÁÈ¡Ä¿Â¼ÖÐµÄËùÓÐÎÄ¼þ/Ä¿Â¼
-    fs.readdir( src, function( err, paths ){
-        if( err ){
+var copy = function (src, dst) {
+    // ï¿½ï¿½È¡Ä¿Â¼ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½/Ä¿Â¼
+    fs.readdir(src, function (err, paths) {
+        if (err) {
             throw err;
         }
 
-        paths.forEach(function( path ){
+        paths.forEach(function (path) {
             var _src = src + '/' + path,
                 _dst = dst + '/' + path,
                 readable, writable;
 
-            stat( _src, function( err, st ){
-                if( err ){
+            stat(_src, function (err, st) {
+                if (err) {
                     throw err;
                 }
 
-                // ÅÐ¶ÏÊÇ·ñÎªÎÄ¼þ
-                if( st.isFile() ){
-                    // ´´½¨¶ÁÈ¡Á÷
-                    readable = fs.createReadStream( _src );
-                    // ´´½¨Ð´ÈëÁ÷
-                    writable = fs.createWriteStream( _dst );
-                    // Í¨¹ý¹ÜµÀÀ´´«ÊäÁ÷
-                    readable.pipe( writable );
+                // ï¿½Ð¶ï¿½ï¿½Ç·ï¿½Îªï¿½Ä¼ï¿½
+                if (st.isFile()) {
+                    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½
+                    readable = fs.createReadStream(_src);
+                    // ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½
+                    writable = fs.createWriteStream(_dst);
+                    // Í¨ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+                    readable.pipe(writable);
                 }
-                // Èç¹ûÊÇÄ¿Â¼ÔòµÝ¹éµ÷ÓÃ×ÔÉí
-                else if( st.isDirectory() ){
-                    exists( _src, _dst, copy );
+                // ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Â¼ï¿½ï¿½Ý¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+                else if (st.isDirectory()) {
+                    exists(_src, _dst, copy);
                 }
             });
         });
     });
 };
 
-// ÔÚ¸´ÖÆÄ¿Â¼Ç°ÐèÒªÅÐ¶Ï¸ÃÄ¿Â¼ÊÇ·ñ´æÔÚ£¬²»´æÔÚÐèÒªÏÈ´´½¨Ä¿Â¼
-var exists = function( src, dst, callback ){
-    fs.exists( dst, function( exists ){
-        // ÒÑ´æÔÚ
-        if( exists ){
-            callback( src, dst );
+// ï¿½Ú¸ï¿½ï¿½ï¿½Ä¿Â¼Ç°ï¿½ï¿½Òªï¿½Ð¶Ï¸ï¿½Ä¿Â¼ï¿½Ç·ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½È´ï¿½ï¿½ï¿½Ä¿Â¼
+var exists = function (src, dst, callback) {
+    fs.exists(dst, function (exists) {
+        // ï¿½Ñ´ï¿½ï¿½ï¿½
+        if (exists) {
+            callback(src, dst);
         }
-        // ²»´æÔÚ
-        else{
-            fs.mkdir( dst, function(){
-                callback( src, dst );
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        else {
+            fs.mkdir(dst, function () {
+                callback(src, dst);
             });
         }
     });
 };
 
-// ¸´ÖÆÄ¿Â¼
-exists( './svg', './svg_Build', copy );
+// ï¿½ï¿½ï¿½ï¿½Ä¿Â¼
+exists('./svg', './svg_Build', copy);
