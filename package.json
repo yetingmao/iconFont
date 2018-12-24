@@ -1,15 +1,18 @@
 {
   "name": "iconfont",
-  "version": "0.0.1",
-  "main": "app.js",
+  "version": "1.0.7",
+  "main": "static/index.html",
+  "author": "yetm",
   "license": "unlicensed",
   "scripts": {
-    "build": "node app"
+    "build": "node app",
+    "build:clean": "rm -rf ./output && yarn build",
+    "prepublishOnly": "yarn build"
   },
   "dependencies": {
     "font-carrier": "*",
-    "tar": "*",
-    "fstream": "*"
+    "fstream": "*",
+    "tar": "*"
   },
   "devDependencies": {}
 }

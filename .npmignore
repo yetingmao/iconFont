@@ -1,0 +1,16 @@
+
+*.css.d.ts
+/.vscode
+/*.tgz
+
+yarn-error.log
+/package.jsone
+
+/app.js
+/copy.js
+/svg
+/view
+/tsconfig.json
+/tslint.json
+/tslint.fix.json
+.gitlab-ci.yml

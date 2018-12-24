@@ -1,4 +1,3 @@
-
 var fontCarrier = require('font-carrier');
 var font = fontCarrier.create();
 var fs = require('fs');//fs
@@ -36,20 +35,20 @@ for (var i = 0; i < fontArr.length; i++) {
 }
 view += fontString + foot;
 font.output({
-    path: './demo/iconfont'
+    path: './static/iconfont'
 });
 fs.writeFile('./demo/index.html', view, 'UTF-8');
 
 //压缩
-fs.unlink('demo/iconfont.tar.gz');//删除
-var fstream = require('fstream'),
-    tar = require('tar'),
-    zlib = require('zlib');
+// fs.unlink('demo/iconfont.tar.gz');//删除
+// var fstream = require('fstream'),
+//     tar = require('tar'),
+//     zlib = require('zlib');
 
-fstream.Reader({ 'path': 'demo', 'type': 'Directory' }) /* Read the source directory */
-    .pipe(tar.Pack()) /* Convert the directory to a .tar file */
-    .pipe(zlib.Gzip()) /* Compress the .tar file */
-    .pipe(fstream.Writer({ 'path': 'demo/iconfont.tar.gz' })); /* Give the output file name */
+// fstream.Reader({ 'path': 'demo', 'type': 'Directory' }) /* Read the source directory */
+//     .pipe(new tar.Pack()) /* Convert the directory to a .tar file */
+//     .pipe(zlib.Gzip()) /* Compress the .tar file */
+//     .pipe(fstream.Writer({ 'path': 'demo/iconfont.tar.gz' })); /* Give the output file name */
 
 //sort
 function arrsort(a, b) {
