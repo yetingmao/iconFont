@@ -10,3 +10,4 @@ index.html可以预览生成的iconfont效果
 如果没有iconfont的css引用的话需要手动添加   
 
 iconfont SVG文件在iconfont.cn下载[http://iconfont.cn/]
+https://github.com/yetingmao/iconFont.git
