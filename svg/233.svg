@@ -2,6 +2,13 @@
 <!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
-<path d="M1.5,16c-0.4,0-0.8-0.2-1.1-0.4C0.2,15.3,0,14.9,0,14.5v-13C0,0.7,0.7,0,1.5,0h6.1v1.2H1.2v13.6h13.6V8.3H16v6.1
-	c0,0.4-0.2,0.8-0.4,1.1c-0.3,0.3-0.7,0.4-1.1,0.4H1.5z M4.5,10.6L14,1.2h-3.8V0H16v5.8h-1.2V2l-9.4,9.4L4.5,10.6z"/>
+<g>
+	<path d="M15.1,0.9v14.2H0.9V0.9H15.1 M16,0H0v16h16V0L16,0z"/>
+	<polygon points="5.3,14.2 1.8,14.2 1.8,10.7 2.7,10.7 2.7,13.3 5.3,13.3 	"/>
+	<polygon points="14.2,5.3 13.3,5.3 13.3,2.7 10.7,2.7 10.7,1.8 14.2,1.8 	"/>
+	<g>
+		<rect x="3.6" y="7.6" width="8.9" height="0.9"/>
+		<rect x="7.6" y="3.6" width="0.9" height="8.9"/>
+	</g>
+</g>
 </svg>

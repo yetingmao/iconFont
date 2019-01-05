@@ -1,4 +1,3 @@
-
 var fs = require('fs'),
     stat = fs.stat;
 
